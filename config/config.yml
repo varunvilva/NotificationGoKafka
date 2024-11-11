@@ -1,0 +1,25 @@
+notification_policies:
+  email:
+    adapters:
+      - name: EmailAdapter
+        priority: 1
+        max_retries: 3
+  push:
+    adapters:
+      - name: PushAdapter
+        priority: 1
+        max_retries: 2
+  sms:
+    adapters:
+      - name: SMSAdapter
+        priority: 1
+        max_retries: 2
+
+kafka:
+  brokers:
+    - "172.24.0.4:9092"
+  topics:
+    email: "email_notifications"
+    push: "push_notifications"
+    sms: "sms_notifications"
+    failed: "failed_notifications"
